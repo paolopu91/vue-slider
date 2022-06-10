@@ -47,15 +47,18 @@ new Vue (
         //here is where i'm writing my variable
         data: {
             imgSlide :slides,
+            currentNumber: 0,
         },
 
         //here i will create my function
         methods:{
-            imgPrev(){
-                this.image --;
+            prevSlide(){
+                this.currentNumber++;
+
             },
-            imgNext(){
-                this.image++;
+            nextSlide(){
+                this.currentnumber--;
+                
             },
         }
     }
