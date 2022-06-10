@@ -31,7 +31,7 @@
                     <div class="prev" @click="prevSlide" v-if="imgSlide.lenght !=currentNumber"></div>
                     <div class="next" @click="nextSlide" v-if="currentNumber != 0"></div>
                     <div v-for="(img,currentNumber) in imgSlide" class="thumb active">
-                        <img :src="img.image" alt="value.title"/>
+                        <img :src="img.image" alt="value.title" :id="img.currentNumber"/>
                     </div>
                     
                 </div>
