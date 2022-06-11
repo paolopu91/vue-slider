@@ -11,31 +11,26 @@ Far funzionare lo slider partendo dall’html ricevuto.
 
 const slides = [
     {
-        id: 1,
         image: 'img/01.jpg',
         title: 'Svezia',
         text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
     },
     {
-        id: 2,
         image: 'img/02.jpg',
         title: 'Svizzera',
         text: 'Lorem ipsum.',
     },
     {
-        id:3,
         image: 'img/03.jpg',
         title: 'Gran Bretagna',
         text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
     },
     {
-        id: 4,
         image: 'img/04.jpg',
         title: 'Germania',
         text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.',
     },
     {
-        id: 5,
         image: 'img/05.jpg',
         title: 'Paradise',
         text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
@@ -57,13 +52,28 @@ new Vue (
 
         //here i will create my function
         methods:{
+
+            //button prev on my html
             prevSlide(){
-                this.currentNumber++;
+                //I create my condition to slide the images down
+                if (this.currentNumber > 0) {
+                    this.currentNumber--;
+                } else {
+                    this.currentNumber = slides.length - 1;
+                }
+                
+                
             },
+            //Button next on my html
             nextSlide(){
-                this.currentNumber--;
-               
+                //I create my condition to slide the images up
+                if (this.currentNumber < (slides.length - 1)){
+                    this.currentNumber++;
+                } else {
+                    this.currentNumber = 0;
+                }
             },
+            
         }
     }
 )
